@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LinkedList.Model
+namespace data_structures.SLinkedListModel
 {
-    class Item<T>
+    class SLinkedListItem<T>
     {
         private T data = default(T);
 
@@ -19,10 +19,10 @@ namespace LinkedList.Model
                     throw new ArgumentNullException(nameof(value));
             }
         }
-        public Item<T> Next { get; set; }
+        public SLinkedListItem<T> Next { get; set; }
 
 
-        public Item(T data) 
+        public SLinkedListItem(T data)
         {
             Data = data;
         }

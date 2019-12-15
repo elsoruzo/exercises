@@ -10,7 +10,7 @@ namespace Factory
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Red;
 
-            new Client().Main();
+            new FactoryClient().Main();
             Console.ReadKey();
         }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factory.Model
 {
-    class ConcreteCreator2 : Creator
+    class ConcreteCreator2 : FactoryCreator
     {
         public override IProduct FactoryMethod()
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factory.Model
 {
-    class Client
+    class FactoryClient
     {
         public void Main()
         {
@@ -43,11 +43,11 @@ namespace Factory.Model
     // through its base interface. As long as the client keeps working with
     // the creator via the base interface, you can pass it any creator's
     // subclass.
-        public void ClientCode(Creator creator)
+        public void ClientCode(FactoryCreator factoryCreator)
         {
             // ...
             Console.WriteLine("Client: I'm not aware of the creator's class," +
-                "but it still works.\n" + creator.SomeOperation());
+                "but it still works.\n" + factoryCreator.SomeOperation());
             // ...
         }
      }

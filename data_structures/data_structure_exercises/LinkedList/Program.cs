@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using LinkedList.Model;
+using System.Collections;
 
-namespace LinkedList
+namespace data_structures.SLinkedListModel
 {
 
     class Program
     {
         static void Main(string[] args)
         {
-            var list = new Model.LinkedList<int>();
+            var list = new SLinkedList<int>();
             list.Add(1);
             list.Add(2);
             list.Add(3);

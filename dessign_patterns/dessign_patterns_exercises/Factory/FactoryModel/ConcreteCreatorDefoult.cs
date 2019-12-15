@@ -1,6 +1,6 @@
 ﻿namespace Factory.Model
 {
-    internal class ConcreteCreatorDefoult : Creator
+    internal class ConcreteCreatorDefoult : FactoryCreator
     {
         public override IProduct FactoryMethod()
         {
