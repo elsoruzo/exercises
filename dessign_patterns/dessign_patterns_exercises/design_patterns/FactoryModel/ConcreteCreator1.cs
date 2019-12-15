@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Factory.Model
+namespace design_patterns_exercises.FactoryModel
 {
     // Concrete Creators override the factory method in order to change the
     // resulting product's type.

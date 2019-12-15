@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Factory.Model
+namespace design_patterns_exercises.FactoryModel
 {
     // Concrete Products provide various implementations of the Product
     // interface.

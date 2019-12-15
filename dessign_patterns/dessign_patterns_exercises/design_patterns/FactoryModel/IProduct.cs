@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Factory.Model
+namespace design_patterns_exercises.FactoryModel
 {
 
     // The Product interface declares the operations that all concrete products

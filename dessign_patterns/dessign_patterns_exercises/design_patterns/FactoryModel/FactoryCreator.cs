@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Factory.Model
+namespace design_patterns_exercises.FactoryModel
 {
     // The Creator class declares the factory method that is supposed to return
     // an object of a Product class. The Creator's subclasses usually provide

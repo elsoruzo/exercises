@@ -1,4 +1,4 @@
-﻿namespace Factory.Model
+﻿namespace design_patterns_exercises.FactoryModel
 {
     internal class ConcreteCreatorDefoult : FactoryCreator
     {
