@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace design_patterns_exercises.BehavioralPatterns.ChainOfResponsibilityModel
+﻿namespace design_patterns_exercises.BehavioralPatterns.ChainOfResponsibilityModel
 {
     class SquirrelHandler : AbstractHandler
     {

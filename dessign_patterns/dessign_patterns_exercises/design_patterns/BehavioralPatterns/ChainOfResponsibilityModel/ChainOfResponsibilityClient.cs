@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace design_patterns_exercises.BehavioralPatterns.ChainOfResponsibilityModel
 {
     class ChainOfResponsibilityClient
     {
-        // Обычно клиентский код приспособлен для работы с единственным
-        // обработчиком. В большинстве случаев клиенту даже неизвестно, что этот
-        // обработчик является частью цепочки.
+
+        /// <summary>
+        /// Обычно клиентский код приспособлен для работы с единственным
+        /// обработчиком. В большинстве случаев клиенту даже неизвестно, что этот
+        /// обработчик является частью цепочки.
+        /// </summary>
+        /// <param name="handler"></param>
         public static void ClientCode(AbstractHandler handler)
         {
             foreach (var food in new List<string> { "Nut", "Banana", "Cup of coffee" })

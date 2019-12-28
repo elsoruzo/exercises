@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace design_patterns_exercises.FactoryModel
 {
@@ -28,21 +26,16 @@ namespace design_patterns_exercises.FactoryModel
                     break;
             }
 
-            //Console.WriteLine("");
-
-            //Console.WriteLine("App: Launched with the ConcreteCreator2.");
-            //ClientCode(new ConcreteCreator2());
-
-            //Console.WriteLine("");
-
-            //Console.WriteLine("App: Launched with the ConcreteCreator2.");
-            //ClientCode(new ConcreteCreator2());
         }
 
-    // The client code works with an instance of a concrete creator, albeit
-    // through its base interface. As long as the client keeps working with
-    // the creator via the base interface, you can pass it any creator's
-    // subclass.
+
+        /// <summary>
+        /// The client code works with an instance of a concrete creator, albeit
+        /// through its base interface. As long as the client keeps working with
+        /// the creator via the base interface, you can pass it any creator's
+        /// subclass.
+        /// </summary>
+        /// <param name="factoryCreator"></param>
         public void ClientCode(FactoryCreator factoryCreator)
         {
             // ...
