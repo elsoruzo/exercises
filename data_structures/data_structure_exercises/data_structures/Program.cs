@@ -1,4 +1,5 @@
 ﻿using System;
+using data_structures.Lists.SLinkedListQueueModel;
 using data_structures.SLinkedListModel;
 using data_structures.Trees;
 
@@ -9,6 +10,17 @@ namespace data_structures
     {
         static void Main(string[] args)
         {
+            SlinkedListQueue q = new SlinkedListQueue();
+            q.enqueue(10);
+            q.enqueue(20);
+            q.dequeue();
+            q.dequeue();
+            q.enqueue(30);
+            q.enqueue(40);
+            q.enqueue(50);
+            var dequedElement = q.dequeue();
+            Console.WriteLine("Dequeued item is " + dequedElement.key + " " + "and the next item is "+ dequedElement.next.key);
+
             BSearchTree tree = new BSearchTree();
 
             /* Let us create following BST  

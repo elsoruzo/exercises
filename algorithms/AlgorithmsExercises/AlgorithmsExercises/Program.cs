@@ -1,4 +1,5 @@
 ﻿using System;
+using AlgorithmsExercises.SearchingAlgorithms;
 using AlgorithmsExercises.SortingAlgorithms.MergeSortModel;
 
 namespace AlgorithmsExercises
@@ -75,6 +76,27 @@ namespace AlgorithmsExercises
         static void Main(string[] args)
 
         {
+            int[] arr = { 2, 3, 4, 10, 40 };
+
+            int key = 10;
+            int? resultIterative = BinarySearch.BinarySearchIterative(arr, key);
+            if (resultIterative == null)
+                Console.WriteLine("Element not present in BinarySearchIterative");
+            else
+                Console.WriteLine("Element found in BinarySearchIterative at "
+                                  + "index " + resultIterative);
+
+
+            int min = 0;
+            int max = arr.Length;
+            int? resultRecursive = BinarySearch.BinarySearchRecursive(arr, key, min, max);
+                            if (resultRecursive == null)
+                Console.WriteLine("Element not present in BinarySearchRecursive");
+            else
+                Console.WriteLine("Element found in BinarySearchRecursive at "
+                                  + "index " + resultRecursive);
+
+
 
             int[] numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
 

@@ -4,6 +4,7 @@
     {
         public override IProduct FactoryMethod()
         {
+            
             throw new System.NotImplementedException();
         }
     }
