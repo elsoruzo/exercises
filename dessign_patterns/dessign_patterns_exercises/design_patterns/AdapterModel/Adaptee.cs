@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace design_patterns_exercises.AdapterModel
+﻿namespace design_patterns_exercises.AdapterModel
 {
-    // The Adaptee contains some useful behavior, but its interface is
-    // incompatible with the existing client code. The Adaptee needs some
-    // adaptation before the client code can use it.
+
+    /// <summary>
+    /// The Adaptee contains some useful behavior, but its interface is
+    /// incompatible with the existing client code. The Adaptee needs some
+    /// adaptation before the client code can use it.
+    /// </summary>
     class Adaptee
     {
         public string GetSpecificRequest()

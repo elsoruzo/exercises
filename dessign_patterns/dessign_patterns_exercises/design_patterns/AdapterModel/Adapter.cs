@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace design_patterns_exercises.AdapterModel
+﻿namespace design_patterns_exercises.AdapterModel
 {
-    // The Adapter makes the Adaptee's interface compatible with the Target's
-    // interface.
+
+    /// <summary>
+    /// The Adapter makes the Adaptee's interface compatible with the Target's
+    /// interface.
+    /// </summary>
     class Adapter : ITarget
     {
         private readonly Adaptee _adaptee;
