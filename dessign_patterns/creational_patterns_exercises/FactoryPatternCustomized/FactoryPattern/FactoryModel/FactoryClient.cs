@@ -6,7 +6,7 @@
 
     class FactoryClient
     {
-        private static int CallTryParse(string stringToConvert, NumberStyles styles)
+        private static int CallTryParse(string stringToConvert, NumberStyles styles, Action main)
         {
             CultureInfo provider;
             int number = 0;
@@ -22,18 +22,21 @@
             if (success)
                 Console.WriteLine("Converted '{0}' to {1}.", stringToConvert, number);
             else
-                Console.WriteLine("Attempted conversion of '{0}' failed.",
+            {
+                Console.WriteLine("Attempted conversion of '{0}' failed. Please try again",
                                   Convert.ToString(stringToConvert));
+                main();
+            }
             return number;
         }
         public void Main()
         {
             Console.WriteLine("Let's create a delivery statement form");
-            Console.WriteLine("Please enter the cargos characteristics:");
-            Console.WriteLine("Please enter the cargos weight in grams:");          
-            int weight = CallTryParse(Console.ReadLine(), NumberStyles.Integer);
-            Console.WriteLine("Please enter the cargos Volume in cubic milimeters:");
-            int volumeInCubicMilimeters = CallTryParse(Console.ReadLine(), NumberStyles.Integer);
+            Console.WriteLine("Please enter the cargo's characteristics:");
+            Console.WriteLine("Please enter the cargo's weight in grams:");
+            int weight = CallTryParse(Console.ReadLine(), NumberStyles.Integer, Main);
+            Console.WriteLine("Please enter the cargo's Volume in cubic milimeters:");
+            int volumeInCubicMilimeters = CallTryParse(Console.ReadLine(), NumberStyles.Integer, Main);
             Console.WriteLine("To Delivery Via Plane press 1");
             Console.WriteLine("To Delivery Via Car press 2");
             Console.WriteLine("To Delivery Via Train press 3");
@@ -69,9 +72,7 @@
 
         public void ClientCode(DeliveryStatementFormFactory factoryCreator)
         {
-            // ...
             Console.WriteLine($"works.\n {factoryCreator.CreateForm()}");
-            // ...
         }
      }
 }
