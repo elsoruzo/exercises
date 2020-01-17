@@ -3,9 +3,9 @@
     using System;
     public class Client
     {
-        public void ClientCode(WormerBaseInterface wormer)
+        public void ClientCode(WormerBaseInterface wormer, double baseTemperature)
         {
-            Console.WriteLine("RESULT: " + wormer.WormUp());
+            Console.WriteLine("RESULT: " + wormer.WormUp(baseTemperature));
         }
     }
 }

@@ -15,11 +15,11 @@
         }
  
         // The Decorator delegates all work to the wrapped component.
-        public override string WormUp()
+        public override string WormUp(double temperature)
         {
             if (this._wormer != null)
             {
-                return this._wormer.WormUp();
+                return this._wormer.WormUp(temperature);
             }
             else
             {
