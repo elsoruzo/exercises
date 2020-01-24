@@ -42,7 +42,11 @@
              todos.Add(event1);
             //Init
             var dbService = new DbService();
-            var todoService = new ToDoService(dbService);
+            var logService = new LoggerService();
+            var dbServiceLogDecorated = new DbServiceLogDecorator(dbService, logService);
+
+            var todoService = new ToDoService(dbServiceLogDecorated);
+
             //Act
             todoService.Save(todos);
 

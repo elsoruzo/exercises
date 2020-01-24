@@ -1,9 +1,9 @@
-﻿namespace DecoratorPratcicalExample.Model
+﻿using System;
+
+namespace DecoratorPratcicalExample.Model
 {
-    public interface ILogEvent 
+    public interface ILogEvent: ITodoEvent
     {
-        string EventType { get; set; }
-        string PersonName { get; set; }
-        System.DateTime DateTime { get; set; }
+       DateTime DateTime { get; set; }
     }
 }

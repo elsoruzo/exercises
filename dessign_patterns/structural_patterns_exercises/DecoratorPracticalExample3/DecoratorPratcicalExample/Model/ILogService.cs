@@ -1,6 +1,6 @@
 ﻿namespace DecoratorPratcicalExample.Model
 {
-    public interface ILogger
+    public interface ILogService
     {
         bool Log(ILogEvent logEvent);
     }
