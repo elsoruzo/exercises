@@ -40,11 +40,15 @@
              todos.Add(event3);
             todos.Add(event2);
              todos.Add(event1);
-            ToDoService todoService = new ToDoService(new DbService());
+            //Init
+            var dbService = new DbService();
+            var todoService = new ToDoService(dbService);
+            //Act
             todoService.Save(todos);
-            LoggerDecorator todoServiceDecorated = new LoggerDecorator(new DbService(), new LoggerService());
+
+            /*LoggerDecorator todoServiceDecorated = new LoggerDecorator(new DbService(), new LoggerService());
             todoServiceDecorated.Save(todos);
-            Console.WriteLine("END RUNNING DECORATOR.");
+            Console.WriteLine("END RUNNING DECORATOR.");*/
             Console.ReadKey();
 
         }

@@ -5,7 +5,7 @@
     {
         public bool Save(ITodoEvent todoEvent)
         {
-            Console.WriteLine($"\n Writting to db data: \n Event type: {todoEvent.EventType} \n Person Name: {todoEvent.PersonName}");
+            Console.WriteLine($"\n Saved to db data: \n Event type: {todoEvent.EventType} \n Person Name: {todoEvent.PersonName}");
             return true;
         }
 

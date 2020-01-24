@@ -3,23 +3,22 @@
     using System.Collections.Generic;
     public class ToDoService
     {
-        IDbService _service;
+        private readonly IDbService _service;
         public ToDoService(IDbService service)
         {
-            _service = service as IDbService;
+            _service = service;
         }
 
-        public bool Save(IEnumerable<ITodoEvent> todoEventList)
+        public bool Save(IEnumerable<ITodoEvent> model)
         {
-            bool operationWentOk = false;
+            bool retVal = false;
 
-            foreach (var todoEvent in todoEventList)
+            foreach (var item in model)
             {
-                 operationWentOk = _service.Save(todoEvent);
+                 retVal = _service.Save(item);
             }
 
-            return operationWentOk;
-
+            return retVal;
         }
     }
 }
