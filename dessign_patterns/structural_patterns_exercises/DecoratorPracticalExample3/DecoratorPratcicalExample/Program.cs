@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using DecoratorPratcicalExample.Model;
+    using DecoratorPratcicalExample.Models;
     static class Program
     {
         static void Main()
@@ -43,13 +43,18 @@
             //Init
             var dbService = new DbService();
             var logService = new LoggerService();
+            var messageService = new MessageService();
             var dbServiceLogDecorated = new DbServiceLogDecorator(dbService, logService);
-
-            var todoService = new ToDoService(dbServiceLogDecorated);
+            var dbServiceMessageDecorated = new DbServiceMessageDecorator(dbService, messageService);
+            var dbServiceMessageAndLogDecorated = new DbServiceMessageDecorator(dbServiceLogDecorated, messageService);
+            var todoServiceLog = new ToDoService(dbServiceLogDecorated);
+            var todoServiceMessage = new ToDoService(dbServiceMessageDecorated);
+            var todoServiceMessageAndLog = new ToDoService(dbServiceMessageAndLogDecorated);
 
             //Act
-            todoService.Save(todos);
-
+            //todoServiceLog.Save(todos);
+            //todoServiceMessage.Save(todos);
+            todoServiceMessageAndLog.Save(todos);
             /*LoggerDecorator todoServiceDecorated = new LoggerDecorator(new DbService(), new LoggerService());
             todoServiceDecorated.Save(todos);
             Console.WriteLine("END RUNNING DECORATOR.");*/

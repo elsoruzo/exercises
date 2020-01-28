@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DecoratorPratcicalExample.Model
+namespace DecoratorPratcicalExample.Models
 {
     public interface ILogEvent: ITodoEvent
     {

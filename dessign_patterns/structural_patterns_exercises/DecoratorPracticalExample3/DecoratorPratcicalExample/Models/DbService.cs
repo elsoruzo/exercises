@@ -1,4 +1,4 @@
-﻿namespace DecoratorPratcicalExample.Model
+﻿namespace DecoratorPratcicalExample.Models
 {
     using System;
     public class DbService: IDbService

@@ -1,4 +1,4 @@
-﻿namespace DecoratorPratcicalExample.Model
+﻿namespace DecoratorPratcicalExample.Models
 {
     class TodoEvent : ITodoEvent
     {

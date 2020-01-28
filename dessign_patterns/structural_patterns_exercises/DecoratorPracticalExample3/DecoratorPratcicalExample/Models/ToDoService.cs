@@ -1,4 +1,4 @@
-﻿namespace DecoratorPratcicalExample.Model
+﻿namespace DecoratorPratcicalExample.Models
 {
     using System.Collections.Generic;
     public class ToDoService
