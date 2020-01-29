@@ -2,6 +2,6 @@
 {
     public interface IMessageService
     {
-         bool SendMessage(IMessageEvent message);
+         bool Send(IMessageEvent message);
     }
 }

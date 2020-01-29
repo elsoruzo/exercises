@@ -2,6 +2,6 @@
 {
     public interface IMessageEvent: ITodoEvent
     {
-        bool IsDone { get; set; }
+        string[] To { get; set; }
     }
 }
