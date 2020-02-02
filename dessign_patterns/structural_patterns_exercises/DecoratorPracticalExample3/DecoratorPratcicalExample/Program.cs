@@ -45,27 +45,19 @@
             var logService = new LoggerService();
             var messageService = new MessageService();
 
-
+            //TODO
+            // MessageServiceContactDecorator
+            // var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, MessageServiceContactDecorator);
 
             var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, messageService);
-            //var dbServiceMessageAndLogDecorated = new DbServiceMessageDecorator(dbServiceLogDecorated, messageService);
-
 
             var dbServiceLogDecorated = new DbServiceLogDecorator(dbService, logServiceMessageDecorator);
 
             var todoService = new ToDoService(dbServiceLogDecorated);
 
-
-            //// var todoServiceMessage = new ToDoService(dbServiceMessageDecorated);
-            //// var todoServiceMessageAndLog = new ToDoService(dbServiceMessageAndLogDecorated);
-
             //Act
-            //todoServiceLog.Save(todos);
-            //todoServiceMessage.Save(todos);
             todoService.Save(todos);
-            /*LoggerDecorator todoServiceDecorated = new LoggerDecorator(new DbService(), new LoggerService());
-            todoServiceDecorated.Save(todos);
-            Console.WriteLine("END RUNNING DECORATOR.");*/
+
             Console.ReadKey();
 
         }
