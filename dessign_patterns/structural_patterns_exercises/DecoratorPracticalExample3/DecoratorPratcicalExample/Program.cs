@@ -44,12 +44,13 @@
             var dbService = new DbService();
             var logService = new LoggerService();
             var messageService = new MessageService();
+            var contactService = new ContactService();
 
-            //TODO
-            // MessageServiceContactDecorator
-            // var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, MessageServiceContactDecorator);
+            var messageServiceContactDecorator = new MessageServiceContactDecorator(contactService, messageService);
 
-            var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, messageService);
+             var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, messageServiceContactDecorator);
+
+            //var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, messageService);
 
             var dbServiceLogDecorated = new DbServiceLogDecorator(dbService, logServiceMessageDecorator);
 

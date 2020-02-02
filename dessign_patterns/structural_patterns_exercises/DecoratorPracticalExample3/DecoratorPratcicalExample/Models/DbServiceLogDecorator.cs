@@ -12,13 +12,8 @@
             _dbService = dbService;
             _logService = loggerService;
         }
-        
-        /// <summary>
-        /// Mapping
-        /// </summary>
-        /// <param name="todoEvent"></param>
-        /// <returns></returns>
-        private LogEvent MapToLogEvent(ITodoEvent todoEvent)
+
+          private LogEvent MapToLogEvent(ITodoEvent todoEvent)
         {
             return new LogEvent()
             {

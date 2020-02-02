@@ -3,12 +3,12 @@
     public class LogServiceMessageDecorator : ILogService
     {
         private readonly ILogService _logService;
-        private readonly IMessageService _messageService;
+        private readonly IContactService _contactService;
 
-        public LogServiceMessageDecorator(ILogService logService, IMessageService messageService)
+        public LogServiceMessageDecorator(ILogService logService, IContactService contactService)
         {
             _logService = logService;
-            _messageService = messageService;
+            _contactService = contactService;
         }
 
         private MessageEvent MapToMessageEvent(ILogEvent logEvent)
@@ -30,7 +30,7 @@
         {
             if (IsSendMessageRule(logEvent))
             {
-                _messageService.Send(MapToMessageEvent(logEvent));
+                _contactService.IsPersonOnLine(MapToMessageEvent(logEvent));
             }
             return _logService.Log(logEvent);
         }
