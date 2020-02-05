@@ -46,7 +46,7 @@
             var messageService = new MessageService();
             var contactService = new ContactService();
 
-            var messageServiceContactDecorator = new MessageServiceContactDecorator(contactService, messageService);
+            var messageServiceContactDecorator = new MessageServiceContactDecorator(messageService, contactService);
 
              var logServiceMessageDecorator = new LogServiceMessageDecorator(logService, messageServiceContactDecorator);
 

@@ -1,25 +1,20 @@
 ﻿namespace DecoratorPratcicalExample.Models
 {
-    public class MessageServiceContactDecorator : IContactService
+    public class MessageServiceContactDecorator : IMessageService
     {
-        private readonly IContactService _contactService;
         private readonly IMessageService _messageService;
+        private readonly IContactService _contactService;
 
-        public MessageServiceContactDecorator(IContactService contactService, IMessageService messageService)
+        public MessageServiceContactDecorator( IMessageService messageService, IContactService contactService)
         {
-            _contactService = contactService;
             _messageService = messageService;
+            _contactService = contactService;
         }
 
 
         public bool Send(IMessageEvent message)
         {
-            return _messageService.Send(message);
-        }
-
-        public bool IsPersonOnLine(IMessageEvent message)
-        {
-            return _contactService.IsPersonOnLine(message) ? Send(message) : false;
+            return _contactService.IsPersonOnLine(message) ? _messageService.Send(message) : false;
         }
 
     }
