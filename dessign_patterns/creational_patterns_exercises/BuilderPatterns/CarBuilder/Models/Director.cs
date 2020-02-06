@@ -9,16 +9,16 @@
             set { _builder = value; }
         }
 
-        public void buildMinimalViableProduct()
+        public void buildMinimalViableCar()
         {
-            this._builder.SetEngine();
-            this._builder.SetSeats();
+            this._builder.SetEngine("4 cilinders basic engine");
+            this._builder.SetSeats(4);
         }
 
-        public void buildFullFeaturedProduct()
+        public void buildFullFeaturedCar()
         {
-            this._builder.SetEngine();
-            this._builder.SetSeats();
+            this._builder.SetEngine("V8");
+            this._builder.SetSeats(4);
             this._builder.SetGps();
             this._builder.SetTripComputer();
         }

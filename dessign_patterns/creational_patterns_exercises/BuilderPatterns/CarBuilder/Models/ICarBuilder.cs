@@ -1,7 +1,8 @@
 ﻿namespace CarBuilder.Models
 {
-    public interface ICar
+    public interface ICarBuilder
     {
+        void Reset();
         void SetSeats(int amounth);
         void SetEngine(string type);
         void SetTripComputer();
