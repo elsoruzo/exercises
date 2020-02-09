@@ -2,10 +2,11 @@
 {
     public interface ICarBuilder
     {
-        void Reset();
-        void SetSeats(int amounth);
-        void SetEngine(string type);
-        void SetTripComputer();
-        void SetGps();
+        ICarBuilder Init();
+        ICarBuilder SetSeats(int amounth);
+        ICarBuilder SetEngine(string type);
+        ICarBuilder SetTripComputer();
+        ICarBuilder SetGps();
+        Car GetResult();
     }
 }

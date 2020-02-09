@@ -9,18 +9,22 @@
             set { _builder = value; }
         }
 
-        public void buildMinimalViableCar()
+        public ICar buildMinimalViableCar()
         {
-            this._builder.SetEngine("4 cilinders basic engine");
-            this._builder.SetSeats(4);
+            return _builder.Init()
+                           .SetEngine("4 cilinders basic engine")
+                           .SetSeats(4)
+                           .GetResult();
         }
 
-        public void buildFullFeaturedCar()
+        public ICar buildFullFeaturedCar()
         {
-            this._builder.SetEngine("V8");
-            this._builder.SetSeats(4);
-            this._builder.SetGps();
-            this._builder.SetTripComputer();
+            return _builder.Init()
+                           .SetEngine("V8")
+                           .SetSeats(4)
+                           .SetGps()
+                           .GetResult();
+
         }
     }
 }

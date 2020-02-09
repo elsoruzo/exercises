@@ -6,25 +6,22 @@
     {
         static void Main(string[] args)
         {
-
             var director = new Director();
             var carBuilder = new CarBuilder();
             director.Builder = carBuilder;
 
             Console.WriteLine("Standard basic Car:");
-            director.buildMinimalViableCar();
-            Console.WriteLine(carBuilder.GetCar().ToString());
+            Console.WriteLine(director.buildMinimalViableCar());
 
             Console.WriteLine("Full featured Car:");
-            director.buildFullFeaturedCar();
-            Console.WriteLine(carBuilder.GetCar().ToString());
+            Console.WriteLine(director.buildFullFeaturedCar());
 
             Console.WriteLine("Custom product:");
-            carBuilder.Reset();
-            carBuilder.SetEngine("Electric Engine");
-            carBuilder.SetSeats(3);
-            carBuilder.SetTripComputer();
-            Console.Write(carBuilder.GetCar().ToString());
+            carBuilder.Init()
+                      .SetEngine("Electric Engine")
+                      .SetSeats(3)
+                      .SetTripComputer();
+            Console.Write(carBuilder.GetResult());
             Console.ReadKey();
         }
     }

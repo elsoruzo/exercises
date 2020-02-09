@@ -1,46 +1,58 @@
 ﻿namespace CarBuilder.Models
 {
-
+    using System;
     public class CarBuilder : ICarBuilder
     {
-        private Car _car = new Car();
+        private Car _car = null;
         public CarBuilder()
         {
-            this.Reset();
+            this.Init();
         }
 
-        public void Reset()
+        public ICarBuilder Init()
         {
             this._car = new Car();
+            return this;
         }
 
-        public Car GetCar()
+        private void CheckCarIsNotNull()
         {
-            Car result = this._car;
-
-            this.Reset();
-
-            return result;
+            if (_car == null)
+                throw new Exception();
         }
-        
-        public void SetSeats(int amounth)
+
+        public Car GetResult()
         {
+            CheckCarIsNotNull();
+            return this._car;
+        }
+
+        public ICarBuilder SetSeats(int amounth)
+        {
+            CheckCarIsNotNull();
             this._car.Seats = amounth;
+            return this;
         }
 
-        public void SetEngine(string type)
+        public ICarBuilder SetEngine(string type)
         {
+            CheckCarIsNotNull();
             this._car.Engine = type;
+            return this;
         }
 
-        public void SetTripComputer()
+        public ICarBuilder SetTripComputer()
         {
+            CheckCarIsNotNull();
             this._car.IsHasTripComputer = true;
+            return this;
         }
 
-        public void SetGps()
+        public ICarBuilder SetGps()
         {
+            CheckCarIsNotNull();
             this._car.IsHasGps = true;
+            return this;
         }
     }
 }
