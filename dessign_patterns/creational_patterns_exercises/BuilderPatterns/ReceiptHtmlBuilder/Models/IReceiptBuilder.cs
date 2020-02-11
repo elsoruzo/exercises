@@ -1,11 +1,13 @@
-﻿namespace CarBuilder.Models
+﻿namespace ReceiptHtmlBuilder.Models
 {
+    using System.Collections.Generic;
     public interface IReceiptBuilder
     {
-        void Reset();
-        void SetSeats(int amounth);
-        void SetEngine(string type);
-        void SetTripComputer();
-        void SetGps();
+        IReceiptBuilder Init();
+        string GetResult();
+        IReceiptBuilder BuildHeader(IHeader header);
+        IReceiptBuilder BuildBody(IList<IBody> groceries);
+        IReceiptBuilder BuildFooter(IFooter footer);
+        IReceiptBuilder BuildTemplate();
     }
 }

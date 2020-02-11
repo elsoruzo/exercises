@@ -3,8 +3,8 @@
     using System.Collections.Generic;
     public interface IReceipt
     {
-        string Header { get; set; }
-        List<Grocery> ContentTable { get; set; }
-        string Footer { get; set; }
+        IHeader Header { get; set; }
+        IList<IBody> Groceries { get; set; }
+        IFooter Footer { get; set; }
     }
 }
