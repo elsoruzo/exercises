@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedTheZooChainOfResponsibilityPattern", "ChainOfResponsibilityPattern\FeedTheZooChainOfResponsibilityPattern.csproj", "{77F5DC0A-F9C7-41B4-9176-CB0809DB8643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationChainOfResponsability", "AuthorizationChainOfResponsability\AuthorizationChainOfResponsability.csproj", "{4CEB637F-613D-4394-AE99-A310536A59F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationChainOfResponsibility", "AuthorizationChainOfResponsability\AuthorizationChainOfResponsibility.csproj", "{4CEB637F-613D-4394-AE99-A310536A59F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
