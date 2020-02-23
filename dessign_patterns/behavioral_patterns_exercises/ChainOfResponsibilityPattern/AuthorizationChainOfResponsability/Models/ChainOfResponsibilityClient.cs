@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     class ChainOfResponsibilityClient
     {
-        public static void ClientCode(AbstractHandler handler)
+        public static void ClientCode(IHandler handler)
         {
             foreach (var role in new List<string> { "Hr", "SpecialOperator", "Employee", "MinorOperator" })
             {

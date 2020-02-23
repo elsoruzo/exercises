@@ -4,6 +4,6 @@
     {
         IHandler SetNext(IHandler handler);
 
-        object Handle(object request);
+        string Handle(string request);
     }
 }
