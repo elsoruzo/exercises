@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedTheZooChainOfResponsibilityPattern", "ChainOfResponsibilityPattern\FeedTheZooChainOfResponsibilityPattern.csproj", "{77F5DC0A-F9C7-41B4-9176-CB0809DB8643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationChainOfResponsibility", "AuthorizationChainOfResponsability\AuthorizationChainOfResponsibility.csproj", "{4CEB637F-613D-4394-AE99-A310536A59F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationChainOfResponsibility", "AuthorizationChainOfResponsability\AuthorizationChainOfResponsibility.csproj", "{4CEB637F-613D-4394-AE99-A310536A59F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthWebNativeChain", "AuthorizationWebAndNativeHandlerChain\AuthWebNativeChain.csproj", "{9E3D88EE-B14A-47E1-BA42-450694B6DF68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4CEB637F-613D-4394-AE99-A310536A59F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CEB637F-613D-4394-AE99-A310536A59F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CEB637F-613D-4394-AE99-A310536A59F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E3D88EE-B14A-47E1-BA42-450694B6DF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3D88EE-B14A-47E1-BA42-450694B6DF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3D88EE-B14A-47E1-BA42-450694B6DF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3D88EE-B14A-47E1-BA42-450694B6DF68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
