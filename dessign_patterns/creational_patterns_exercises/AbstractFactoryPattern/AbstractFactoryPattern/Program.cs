@@ -6,16 +6,16 @@
     {
         static void Main(string[] args)
         {
-            // Create a PoemFactory, generating a Poem book type and a Blog publisher type.
-            var poemFactory = new PoemFactory(author: "Edgar Allan Poe",
-                            title: "The Raven",
-                            publisher: "The American Review");
+            var poemFactory = new PoemFactory();
+            poemFactory.Author = "Edgar Allan Poe";
+            poemFactory.Title = "The Raven";
+            poemFactory.Publisher = "The American Review";
 
-            // Create a ResearchPaperFactory, generating a ResearchPaper book type
-            // and a ScientificJournal publisher type.
-            var researchFactory  = new ResearchPaperFactory(author: "Charles Darwin",
-                                     title: "On the Origin of Species",
-                                     publisher: "John Murray");
+            var researchFactory = new ResearchPaperFactory();
+            researchFactory.Author = "Charles Darwin";
+            researchFactory.Title = "On the Origin of Species";
+            researchFactory.Publisher = "John Murray";
+
             ClientCode internetPortal = new ClientCode();
             Console.WriteLine("Publish POEM!");
             internetPortal.Publish(poemFactory);
