@@ -1,36 +1,29 @@
 ﻿namespace TreadSafePrinter.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.Threading;
+    using System.Collections.Concurrent;
 
-    public sealed class ThreadSafePrinter {  
-        // TODO VOLATILE ?
-    private static volatile ThreadSafePrinter _threadSafePrinterInstance;
+    public sealed class ThreadSafePrinter {
 
-    private Queue<string> _queue = new Queue<string>();
-    private static string _instanceName;
+    private static ThreadSafePrinter _threadSafePrinterInstance;
+
+    private ConcurrentQueue<string> _queue = new ConcurrentQueue<string>();
+   
     private static object _syncRoot = new object();
-        // TODO SemaphoreSlim ?
-        static SemaphoreSlim _sem = new SemaphoreSlim(1);
         private ThreadSafePrinter() { }
-        public static ThreadSafePrinter GetPrinterInstance(string instanceName)
+        public static ThreadSafePrinter GetInstance(string instanceName)
         {
             if (_threadSafePrinterInstance == null)
             {
-                // TODO lock ?
                 lock (_syncRoot)
                 {
-                //_sem.Wait();
 
                 if (_threadSafePrinterInstance == null)
                     {
-                        _instanceName = instanceName;
-                        Console.WriteLine("{0} printer object created", instanceName);
+                        Console.WriteLine($"{ instanceName} printer object created");
                         _threadSafePrinterInstance = new ThreadSafePrinter();
                     }
                 }
-                //_sem.Release();
             }
             return _threadSafePrinterInstance;
         }
@@ -42,8 +35,10 @@
 
         internal void PrintDocument()
         {
+            var result = string.Empty;
+           _queue.TryDequeue(out result);
             Console.WriteLine("Printing the content of the document: " +
-                "\n {0}", _queue.Dequeue());
+                "\n {0}", result);
         }
     }  
 }

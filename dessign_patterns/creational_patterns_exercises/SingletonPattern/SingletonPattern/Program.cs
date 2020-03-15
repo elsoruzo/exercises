@@ -17,7 +17,7 @@
             ThreadSafePrinter secondPrinterObject = null;
             ThreadSafePrinter thirdPrinterObject = null;
 
-           // Task vs Thrad ??
+            // Task vs Thrad ??
 
             Task task1 = Task.Factory.StartNew(() =>
             {
@@ -65,14 +65,14 @@
         }
         private static ThreadSafePrinter GetThreadSafePrinterInstance(string instanceName, string documentName)
         {
-            var printerObject = ThreadSafePrinter.GetPrinterInstance(instanceName);
+            var printerObject = ThreadSafePrinter.GetInstance(instanceName);
             printerObject.AddDocument(documentName);
             printerObject.PrintDocument();
             return printerObject;
         }
         public static void TestSingleton(string value)
         {
-            ThreadSafePrinter singleton = ThreadSafePrinter.GetPrinterInstance(value);
+            ThreadSafePrinter singleton = ThreadSafePrinter.GetInstance(value);
             singleton.AddDocument(value);
             singleton.PrintDocument();
         }
