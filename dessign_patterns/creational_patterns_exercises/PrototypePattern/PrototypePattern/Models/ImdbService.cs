@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PrototypePattern.Models
+﻿namespace PrototypePattern.Models
 {
-    class ImdbService
+    using System;
+
+    public class ImdbService
     {
+        public void SendDataToImdb(IMovieCharacteristics movieCharacteristics)
+        {
+            Console.WriteLine("Sending to IMDB data: " + movieCharacteristics);
+        }
     }
 }

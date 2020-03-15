@@ -5,8 +5,8 @@
     {
         string MovieName { get; set; }
         string ReleaseDate { get; set; }
-        List<string> Genre { get; set; }
-        List<string> Ratings { get; set; }
+        IList<string> Genre { get; set; }
+        IList<string> Ratings { get; set; }
         MovieCharacteristics Clone();
         void GetData();
         string ToString();

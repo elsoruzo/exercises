@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PrototypePattern.Models
+﻿namespace PrototypePattern.Models
 {
-    class RottenTomatoesService
+    using System;
+
+    public class RottenTomatoesService
     {
+        public void SendDataToRottenTomatoes(IMovieCharacteristics movieCharacteristics)
+        {
+            Console.WriteLine("Sending to RottenTomatoes data: " + movieCharacteristics);
+        }
     }
 }
