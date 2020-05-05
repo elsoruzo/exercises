@@ -1,17 +1,21 @@
-﻿namespace VisitorTvParts
+﻿namespace FurnitureVisitor
 {
-	using VisitorTvParts.Models;
+    using System.Collections.Generic;
+    using FurnitureVisitor.Models;
 	class Program
     {
         static void Main(string[] args)
         {
-			PartsOrder order = new PartsOrder();
-			order.AddPart(new Wheel());
-			order.AddPart(new Fender());
-			order.AddPart(new Oil());
-
-			order.Accept(new AtvPartsShippingVisitor());
-			order.Accept(new AtvPartsDisplayVisitor());
-		}
+			List<IFurniture> furniture = new List<IFurniture>();
+			furniture.Add(new OfficeTable());
+			furniture.Add(new OfficeDrower());
+			furniture.Add(new OfficeChair());
+            FurnitureVisitor furnitureVisitor = new FurnitureVisitor();
+            foreach (var piece in furniture)
+            {
+                piece.Render();
+                piece.Accept(furnitureVisitor);
+            }
+        }
     }
 }
