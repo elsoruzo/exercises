@@ -10,7 +10,7 @@ namespace StatePetternFan.Models
 		State fanMedState;
 		State fanHighState;
 
-		State state;
+		public State state;
 
 		public Fan()
 		{

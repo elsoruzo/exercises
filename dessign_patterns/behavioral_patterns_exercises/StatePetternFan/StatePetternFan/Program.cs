@@ -9,25 +9,24 @@ namespace StatePetternFan
         {
 			Fan fan = new Fan();
 
-			Console.WriteLine(fan);
+			Console.WriteLine(fan.state);
 
 			fan.PullChain();
 
-			Console.WriteLine(fan);
+			Console.WriteLine(fan.state);
+
+			fan.PullChain();
+
+			Console.WriteLine(fan.state);
 
 			fan.PullChain();
 
 
-			Console.WriteLine(fan);
+			Console.WriteLine(fan.state);
 
 			fan.PullChain();
 
-
-			Console.WriteLine(fan);
-
-			fan.PullChain();
-
-			Console.WriteLine(fan);
-        }
+			Console.WriteLine(fan.state);
+		}
     }
 }

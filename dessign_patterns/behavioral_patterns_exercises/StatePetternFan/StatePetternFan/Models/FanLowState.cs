@@ -18,7 +18,7 @@ namespace StatePetternFan.Models
             fan.SetState(fan.GetFanMedState());
         }
 
-        public String toString()
+        public override string ToString()
         {
             return "Fan is low.";
         }

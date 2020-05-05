@@ -3,25 +3,25 @@
 
 namespace StatePetternFan.Models
 {
-	public class FanMedState : State
-	{
+    public class FanMedState : State
+    {
 
-	private Fan fan;
+        private Fan fan;
 
-	public FanMedState(Fan fan)
-	{
-		this.fan = fan;
-	}
+        public FanMedState(Fan fan)
+        {
+            this.fan = fan;
+        }
 
-	public override void HandleRequest()
-	{
-		Console.WriteLine("Turning fan on to high...");
-		fan.SetState(fan.GetFanHighState());
-	}
+        public override void HandleRequest()
+        {
+            Console.WriteLine("Turning fan on to high...");
+            fan.SetState(fan.GetFanHighState());
+        }
 
-	public String toString()
-	{
-		return "Fan is on med.";
-	}
-}
+        public override string ToString()
+        {
+            return "Fan is on med.";
+        }
+    }
 }
