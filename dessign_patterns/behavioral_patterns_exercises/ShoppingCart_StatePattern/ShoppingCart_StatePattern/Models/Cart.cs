@@ -30,27 +30,27 @@ namespace ShoppingCart_StatePattern.Models
 
         public void AddItem()
         {
-             State.AddItem(this.State);
+             State.AddItem();
         }
 
         public void RemoveItem()
         {
-            State.RemoveItem(this.State);
+            State.RemoveItem();
         }
 
         public void Checkout()
         {
-            State.Checkout(this.State);
+            State.Checkout();
         }
 
         public void Pay()
         {
-            State.Pay(this.State);
+            State.Pay();
         }
 
         public void EmptyCart()
         {
-            State.EmptyCart(this.State);
+            State.EmptyCart();
         }
 
 

@@ -12,15 +12,15 @@ namespace ShoppingCart_StatePattern.Models
             this.Cart = cart;
         }
 
-        public abstract void AddItem(State state);
+        public abstract void AddItem();
 
-        public abstract void RemoveItem(State state);
+        public abstract void RemoveItem();
 
-        public abstract void Checkout(State state);
+        public abstract void Checkout();
 
-        public abstract void Pay(State state);
+        public abstract void Pay();
 
-        public abstract void EmptyCart(State state);
+        public abstract void EmptyCart();
 
     }
 }

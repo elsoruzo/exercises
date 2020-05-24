@@ -8,29 +8,29 @@ namespace ShoppingCart_StatePattern.Models
         {
         }
 
-        public override void AddItem(State state)
+        public override void AddItem()
         {
             Cart.Items += 1;
             Console.WriteLine($"You now have {Cart.Items} items in your cart.");
         }
 
-        public override void Checkout(State state)
+        public override void Checkout()
         {
             Console.WriteLine("Done shopping. Let's check out!");
             Cart.State = Cart.AtCheckOut;
         }
 
-        public override void EmptyCart(State state)
+        public override void EmptyCart()
         {
             Console.WriteLine("Your can only empty the cart at checkout.");
         }
 
-        public override void Pay(State state)
+        public override void Pay()
         {
             Console.WriteLine("You have to go to checkout to pay!");
         }
 
-        public override void RemoveItem(State state)
+        public override void RemoveItem()
         {
             Cart.Items -= 1;
             if (Cart.Items > 0) 
