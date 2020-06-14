@@ -1,10 +1,9 @@
 ﻿
-using System;
 using DrinkMachine.Models;
 
 namespace DrinkMachine
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

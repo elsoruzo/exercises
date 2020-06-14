@@ -1,0 +1,3 @@
+﻿Profiling of 'FlyweightEconomyOfMemeory' started.
+FlyweightEconomyOfMemeory has exited.
+Profiling of 'FlyweightEconomyOfMemeory' stopped.

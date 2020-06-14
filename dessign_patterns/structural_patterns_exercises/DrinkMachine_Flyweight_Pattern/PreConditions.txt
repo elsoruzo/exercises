@@ -1,0 +1,38 @@
+-- 1000 types of drinks
+-- drinks objects are heavy occupy large size in memory
+-- make them lighter
+-- 50  variations with cup 
+-- 20 variotions with drink matter 
+
+
+Case 1
+1000 = 2* 1000 *5MB + 1000B
+{
+	matter
+	shugar
+	color
+	texture of drink 5MB
+	size
+	stick
+	texture of cup 5MB
+	price
+}
+
+Case 2
+1000+70 = 70*5MB +1000*8B
+{
+	drink
+	{
+		matter
+		shugar
+		color
+		texture of drink 5MB
+	}
+	cup
+	{
+		size
+		stick
+		texture of cup 5MB
+	}
+	price
+}
