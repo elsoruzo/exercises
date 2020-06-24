@@ -20,7 +20,7 @@ namespace DrinkMachineWithHeavyEntity.Models
                         Matter = "Espresso",
                         Shugar = false,
                         Color = "Brown",
-                        TextureOfDrink = Image.FromFile("..\\..\\..\\GLIF2017_maps_9-21\\GLIF2017_Europe_Africa_8k_9-21.jpg"),
+                        TextureOfDrink = Image.FromFile(@"..\..\..\GLIF2017_maps_9-21\\GLIF2017_Europe_Africa_8k_9-21.jpg"),
                         Size = 300,
                         Stick = false,
                         TextureOfCup = Image.FromFile("..\\..\\..\\GLIF2017_maps_9-21\\GLIF2017_SouthAmerica_8k_9-21.jpg"),

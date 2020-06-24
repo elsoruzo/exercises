@@ -5,7 +5,7 @@
 -- 20 variotions with drink matter 
 
 
-Case 1
+Case 1 -->3GB
 1000 = 2* 1000 *5MB + 1000B
 {
 	matter
@@ -18,7 +18,7 @@ Case 1
 	price
 }
 
-Case 2
+Case 2 -->739 MB
 1000+70 = 70*5MB +1000*8B
 {
 	drink
