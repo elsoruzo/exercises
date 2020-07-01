@@ -11,22 +11,22 @@ namespace InterfaceExperiment
     public class TextBox : IUndoable
     {
         void IUndoable.Undo() => Undo();    // Calls method below
-        public virtual void Undo() => Console.WriteLine ("TextBox.Undo");
+        protected virtual void Undo() => Console.WriteLine ("TextBox.Undo");
     }
 
     public class RichTextBox : TextBox
     {
-        public override void Undo() => Console.WriteLine("RichTextBox.Undo"); 
+        protected override void Undo() => Console.WriteLine("RichTextBox.Undo"); 
 
     }
         class Program
     {
         static void Main(string[] args)
         {
-            RichTextBox r = new RichTextBox(); 
+            TextBox r = new TextBox(); 
             r.Undo();                 // RichTextBox.Undo      Case 1
             ((IUndoable)r).Undo();    // RichTextBox.Undo      Case 2 
-            ((TextBox)r).Undo();      // TextBox.Undo          Case 3
+            ((IUndoable)(TextBox)r).Undo();      // TextBox.Undo          Case 3
         }
     }
 }
