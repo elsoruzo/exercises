@@ -20,8 +20,21 @@ namespace MovingFurnitureAndHouseholdSystem
             Item fork = new Item("fork", 2);
             Item plate = new Item("plate", 2);
 
+            Item stockPotSmall = new Item("stockPotSmall", 1);
+            Item stockPotMedium = new Item("stockPotMedium", 1);
+            Item stockPotBig = new Item("stockPotBig", 1);
+            Item panSmall = new Item("panSmall", 1);
+            Item panMedium = new Item("panMedium", 1);
+            Item panBig = new Item("panBig", 1);
+            Item microwave= new Item("microwave", 10);
+            Item electrickOven = new Item("electrickOven", 10);
+            Item electrickMeatGrinder = new Item("electrickMeatGrinder", 10);
+
+            Item kitchendrawBox = new Item("kitchendrawBox", 36);
+            kitchendrawBox.SubCollection = new List<Item>() { stockPotSmall, stockPotMedium, stockPotBig, panSmall, panMedium, panBig, microwave, electrickOven, electrickMeatGrinder };
+
             Item kitchendraw = new Item("kitchendraw", 50);
-            kitchendraw.SubCollection = new List<Item>() { cup, spoon, fork, plate };
+            kitchendraw.SubCollection = new List<Item>() { cup, spoon, fork, plate, kitchendrawBox };
 
             Item goldenRing = new Item("goldenRing", 1);
             Item pearlNeckless = new Item("pearlNeckless", 1);
@@ -40,23 +53,35 @@ namespace MovingFurnitureAndHouseholdSystem
 
             Item chair = new Item("chair", 4);
             Item table = new Item("table", 10);
-            Item sofa = new Item("sofa", 30);
+            Item sofa = new Item("sofa", 20);
             Item computer = new Item("computer", 10);
-            ItemsCollectionFilter lightFilter = new ItemsCollectionFilter(new List<Item>() { chair, table, sofa, computer, desc, kitchendraw, wardrobe }, false);
-            ItemsCollectionFilter heavyFilter = new ItemsCollectionFilter(new List<Item>() { chair, table, sofa, computer, desc, kitchendraw, wardrobe }, true);
+            //ItemsCollectionFilter lightFilter = new ItemsCollectionFilter(new List<Item>() { chair, table, sofa, computer, desc, kitchendraw, wardrobe }, false);
+            //ItemsCollectionFilter heavyFilter = new ItemsCollectionFilter(new List<Item>() { chair, table, sofa, computer, desc, kitchendraw, wardrobe }, true);
+            //ItemsCollectionUnboxerFilter unboxer = new ItemsCollectionUnboxerFilter(new List<Item>() { chair, table, sofa, computer, desc, kitchendraw, wardrobe }, "HeavyItemsUnboxerEnumerator");
+            ItemsCollectionUnboxerFilter unboxerStack = new ItemsCollectionUnboxerFilter(new List<Item>() { chair, table, sofa, computer, desc, kitchendraw, wardrobe }, "HeavyItemsUnboxerStackEnumerator");
 
 
-            var enumerator = lightFilter.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                enumerator.Current.GetNameAndWeight();
-            }
+            //var enumerator = lightFilter.GetEnumerator();
+            //while (enumerator.MoveNext())
+            //{
+            //    enumerator.Current.GetNameAndWeight();
+            //}
 
-            foreach (Item item in heavyFilter)
+            //foreach (Item item in heavyFilter)
+            //{
+            //    item.GetNameAndWeight();
+            //}
+
+            //foreach (Item item in unboxer)
+            //{
+            //    item.GetNameAndWeight();
+            //}
+
+
+            foreach (Item item in unboxerStack)
             {
                 item.GetNameAndWeight();
             }
-
 
         }
     }
